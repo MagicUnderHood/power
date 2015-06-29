@@ -26,8 +26,15 @@ public class Main1 {
             System.out.println("You entered a power = " + pow); 
  
             Power power;
-            if(pow < 0) power = new NegativePower();
-            else power = new PositivePower();
+			
+			if((Math.abs(pow - (int) pow)) > 0){
+				power = new FractionPower();
+			}
+			else{
+				if(pow < 0) power = new NegativePower();
+				else power = new PositivePower();
+			}
+			
             TestPower(power, base, pow); 
         }
     }
