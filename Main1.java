@@ -27,7 +27,10 @@ public class Main1 {
  
             Power power;
 			
-			if((Math.abs(pow - (int) pow)) > 0){
+			double eps = 0.0001;
+			//if((pow%1 < (1 - eps)) && (pow%1 > eps)){
+			if(pow%1 > eps){
+				System.out.println("FrP");
 				power = new FractionPower();
 			}
 			else{
